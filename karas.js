@@ -22,7 +22,7 @@ let executar = function(e){
 }
 let criptografar = function(texto){
 	let result = "";
-	for(let caractere of texto.toLowerCase()){
+	for(let caractere of texto.toLowerCase().normalize("NFD").replace(/\p{Diacritic}/gu, "")){
 		if(caractere == "a"){
 			result += "ais";
 		}
